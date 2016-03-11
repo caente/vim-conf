@@ -14,7 +14,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -98,9 +98,6 @@ set shortmess+=I
 " Sets how many lines of history VIM has to remember
 set history=700
 
-" Set to auto read when a file is changed from the outside
-set autoread
-
 "Always show current position
 set ruler
 
@@ -159,7 +156,12 @@ nnoremap <silent> <Leader>ct :CtrlPTag<CR>
 " NerdTree
 map <leader>n :NERDTreeToggle<cr>
 map <leader>r :NERDTreeFind<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" open a NERDTree automatically when vim starts up if no files were specified
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Buffers - explore/next/previous: leader-u, Alt-F12, leader-p.
 nnoremap <silent> <leader>u :BufExplorer<CR>
@@ -224,10 +226,6 @@ let g:rbpt_colorpairs = [
 
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
 
 function! Comment()
   let ext = tolower(expand('%:e'))
