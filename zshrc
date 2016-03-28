@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export AWS_SECRET_KEY=hc3d/yLrj7eo38l7Wiwq+Z/xAvNZZiBMG+IE5ABb
-export AWS_ACCESS_KEY=AKIAJGRG42VSWWTY6PMA
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
