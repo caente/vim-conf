@@ -109,3 +109,10 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 
 # OPAM configuration
 . /Users/caente1/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# AWS
+if [ -f ~/.zsh/aws ]; then
+    source ~/.zsh/aws
+else
+    print "404: ~/.zsh/aws not found."
+fi
