@@ -1,5 +1,6 @@
 " set shell=/bin/sh
 "
+"
 let g:EclimCompletionMethod = 'omnifunc'
 " pathogen
 "execute pathogen#infect()
@@ -15,6 +16,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'rust-lang/rust.vim'
+
+" Plugin 'scrooloose/syntastic'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -35,6 +40,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'blueshirts/darcula'
+
+Plugin 'floobits/floobits-neovim'
 
 " Plugin 'ensime/ensime-vim'
 
@@ -316,3 +323,14 @@ let g:airline_powerline_fonts = 1
 " detecting change
 set autoread                                                                                                                                                                                    
 au CursorHold * checktime
+
+" scrooloose/syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0 
+
