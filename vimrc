@@ -35,7 +35,9 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 Plugin 'derekwyatt/vim-scala'
 
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'frankier/neovim-colors-solarized-truecolor-only'
 
 Plugin 'nanotech/jellybeans.vim'
 
@@ -45,12 +47,14 @@ Plugin 'floobits/floobits-neovim'
 
 " Plugin 'ensime/ensime-vim'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'Shougo/deoplete.nvim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-let EnErrorStyle='Underlined'
+" let EnErrorStyle='Underlined'
 
 " ctags
 set tags=tags;/
@@ -84,14 +88,16 @@ autocmd BufWinLeave * call clearmatches()
 syntax on
 set background=dark
 let g:solarized_termcolors = 256
-" colorscheme solarized
+"colorscheme solarized
 "colorscheme base16-atelierlakeside
 " colorscheme github
 " colorscheme base16-ateliersulphurpool
 " colorscheme ir_black
 "colorscheme jellybeans
+" colorscheme pyte
+" colorscheme autumnleaf
 colorscheme darcula
-" colorscheme sandydune
+"colorscheme sandydune
 
 " leader key
 let mapleader = ','
@@ -334,4 +340,21 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0 
 
+" only hide the buffers, so the undo history is preserved
+set hidden 
 
+" ------  ensime --------
+
+" typechecking after writing
+" autocmd BufWritePost *.scala :EnTypeCheck
+
+" easy type inspection
+" nnoremap <localleader>t :EnTypeCheck<CR>
+
+" change cursor shape in insert mode
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.scala = ['[^. *\t]\.\w*', '[:\[,] ?\w*', '^import .*']
