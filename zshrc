@@ -53,9 +53,6 @@ plugins=(git z osx)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -116,4 +113,10 @@ if [ -f ~/.zsh/aws ]; then
 else
     print "404: ~/.zsh/aws not found."
 fi
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
+# export MANPATH="/usr/local/man:$MANPATH"
+
+export RUST_SRC_PATH=/usr/local/src/rust/src
+
 

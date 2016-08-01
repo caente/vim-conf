@@ -21,6 +21,8 @@ Plugin 'rust-lang/rust.vim'
 
 " Plugin 'scrooloose/syntastic'
 
+Plugin 'racer-rust/vim-racer'
+
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'rking/ag.vim'
@@ -358,3 +360,26 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.scala = ['[^. *\t]\.\w*', '[:\[,] ?\w*', '^import .*']
+
+" syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+set clipboard+=unnamedplus
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
