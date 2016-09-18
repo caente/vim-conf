@@ -47,7 +47,7 @@ Plugin 'blueshirts/darcula'
 
 Plugin 'floobits/floobits-neovim'
 
-" Plugin 'ensime/ensime-vim'
+Plugin 'ensime/ensime-vim'
 
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -355,6 +355,8 @@ set hidden
 
 " change cursor shape in insert mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+" true color
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -383,3 +385,16 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+" " terminal emulator navigation
+" This configuration allows using `Alt+{h,j,k,l}` to navigate between windows no
+" matter if they are displaying a normal buffer or a terminal buffer in terminal
+" mode.
+:tnoremap <A-h> <C-\><C-n><C-w>h
+:tnoremap <A-j> <C-\><C-n><C-w>j
+:tnoremap <A-k> <C-\><C-n><C-w>k
+:tnoremap <A-l> <C-\><C-n><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
