@@ -4,7 +4,6 @@
 let g:EclimCompletionMethod = 'omnifunc'
 " pathogen
 "execute pathogen#infect()
-syntax on
 "filetype plugin indent on
 
 set nocompatible              " be iMproved, required
@@ -14,6 +13,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vimwiki/vimwiki'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -47,7 +48,7 @@ Plugin 'blueshirts/darcula'
 
 Plugin 'floobits/floobits-neovim'
 
-Plugin 'ensime/ensime-vim'
+" Plugin 'ensime/ensime-vim'
 
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -88,9 +89,10 @@ autocmd BufWinLeave * call clearmatches()
 
 " Colors
 syntax on
-set background=dark
+syntax enable
+set background=light
 let g:solarized_termcolors = 256
-"colorscheme solarized
+colorscheme solarized
 "colorscheme base16-atelierlakeside
 " colorscheme github
 " colorscheme base16-ateliersulphurpool
@@ -98,7 +100,7 @@ let g:solarized_termcolors = 256
 "colorscheme jellybeans
 " colorscheme pyte
 " colorscheme autumnleaf
-colorscheme darcula
+" colorscheme darcula
 "colorscheme sandydune
 
 " leader key
@@ -306,7 +308,7 @@ nmap <leader>o <c-w>o
 " set guifont=Monaco:h13
 " set guifont=Ubuntu\ Mono:h16
 " set guifont=inconsolata:h16
-set guifont=Inconsolata\ for\ Powerline:h16
+set guifont=Inconsolata\ for\ Powerline:h18
 " set guifont=hack:h12
 
 " By pressing ctrl + r in the visual mode you will be prompted to enter text
