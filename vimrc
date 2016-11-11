@@ -36,6 +36,7 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
+
 Plugin 'derekwyatt/vim-scala'
 
 " Plugin 'altercation/vim-colors-solarized'
@@ -90,9 +91,9 @@ autocmd BufWinLeave * call clearmatches()
 " Colors
 syntax on
 syntax enable
-set background=light
+set background=dark
 let g:solarized_termcolors = 256
-colorscheme solarized
+" colorscheme solarized
 "colorscheme base16-atelierlakeside
 " colorscheme github
 " colorscheme base16-ateliersulphurpool
@@ -100,7 +101,7 @@ colorscheme solarized
 "colorscheme jellybeans
 " colorscheme pyte
 " colorscheme autumnleaf
-" colorscheme darcula
+colorscheme darcula
 "colorscheme sandydune
 
 " leader key
