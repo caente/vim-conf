@@ -401,3 +401,6 @@ vnoremap <leader>P "+P
 :nnoremap <A-j> <C-w>j
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
+
+let g:python3_host_prog = '/usr/bin/python3'
+
