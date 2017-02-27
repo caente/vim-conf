@@ -12,19 +12,28 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'reedes/vim-pencil'
+
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'racer-rust/vim-racer'
+
+Plugin 'idris-hackers/idris-vim'
 
 Plugin 'vimwiki/vimwiki'
 
 Plugin 'scrooloose/nerdtree'
 
+<<<<<<< HEAD
 Plugin 'rust-lang/rust.vim'
 
 Plugin 'JamshedVesuna/vim-markdown-preview'
 
+=======
+>>>>>>> cd34ebcdcccc7f332df9d08637ebb032c1878796
 " Plugin 'scrooloose/syntastic'
-
-Plugin 'racer-rust/vim-racer'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -51,7 +60,7 @@ Plugin 'blueshirts/darcula'
 
 Plugin 'floobits/floobits-neovim'
 
-" Plugin 'ensime/ensime-vim'
+Plugin 'ensime/ensime-vim'
 
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -68,6 +77,9 @@ set tags=tags;/
 " line numbers
 set number
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" vertical slit for fugitive/Gdiff
+set diffopt+=vertical
 
 " http://stackoverflow.com/questions/1551231/highlight-variable-under-cursor-in-vim-like-in-netbeans
 :autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
@@ -93,7 +105,7 @@ autocmd BufWinLeave * call clearmatches()
 " Colors
 syntax on
 syntax enable
-set background=dark
+set background=light
 let g:solarized_termcolors = 256
 " colorscheme solarized
 "colorscheme base16-atelierlakeside
@@ -104,7 +116,7 @@ let g:solarized_termcolors = 256
 " colorscheme pyte
 " colorscheme autumnleaf
 colorscheme darcula
-"colorscheme sandydune
+" colorscheme sandydune
 
 " leader key
 let mapleader = ','
@@ -311,7 +323,8 @@ nmap <leader>o <c-w>o
 " set guifont=Monaco:h13
 " set guifont=Ubuntu\ Mono:h16
 " set guifont=inconsolata:h16
-set guifont=Inconsolata\ for\ Powerline:h18
+" set guifont=Inconsolata\ for\ Powerline:h18
+set guifont=Fira\ Code:h16
 " set guifont=hack:h12
 
 " By pressing ctrl + r in the visual mode you will be prompted to enter text
@@ -350,6 +363,11 @@ let g:syntastic_check_on_wq = 0
 " only hide the buffers, so the undo history is preserved
 set hidden 
 
+" racer config for rust autocomplete
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="~/.cargo/rust/src/"
+let g:racer_experimental_completer = 1
+
 " ------  ensime --------
 
 " typechecking after writing
@@ -357,6 +375,8 @@ set hidden
 
 " easy type inspection
 " nnoremap <localleader>t :EnTypeCheck<CR>
+
+" au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
 
 " change cursor shape in insert mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -409,3 +429,9 @@ vnoremap <leader>P "+P
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
 
+" enabling pencil for markdown
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+augroup END
