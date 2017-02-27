@@ -20,6 +20,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'rust-lang/rust.vim'
 
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 " Plugin 'scrooloose/syntastic'
 
 Plugin 'racer-rust/vim-racer'
@@ -98,7 +100,7 @@ let g:solarized_termcolors = 256
 " colorscheme github
 " colorscheme base16-ateliersulphurpool
 " colorscheme ir_black
-"colorscheme jellybeans
+" colorscheme jellybeans
 " colorscheme pyte
 " colorscheme autumnleaf
 colorscheme darcula
@@ -402,5 +404,8 @@ vnoremap <leader>P "+P
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
 
-let g:python3_host_prog = '/usr/bin/python3'
+" markdown preview
+" let vim_markdown_preview_browser='Firefox'
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
 

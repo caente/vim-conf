@@ -120,3 +120,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
 export RUST_SRC_PATH=/usr/local/src/rust/src
 
 
+
+export NVM_DIR="/Users/caente1/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
