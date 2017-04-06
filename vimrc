@@ -26,7 +26,7 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'JamshedVesuna/vim-markdown-preview'
+" Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " Plugin 'scrooloose/syntastic'
 
@@ -425,7 +425,7 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
 
 
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " enabling pencil for markdown
 augroup pencil
