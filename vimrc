@@ -12,19 +12,19 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'reedes/vim-pencil'
-
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'rust-lang/rust.vim'
+" Plugin 'rust-lang/rust.vim'
 
-Plugin 'racer-rust/vim-racer'
+" Plugin 'racer-rust/vim-racer'
 
-Plugin 'idris-hackers/idris-vim'
+" Plugin 'idris-hackers/idris-vim'
 
 Plugin 'vimwiki/vimwiki'
 
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'mklabs/split-term.vim'
 
 " Plugin 'scrooloose/syntastic'
 
@@ -45,15 +45,15 @@ Plugin 'derekwyatt/vim-scala'
 
 " Plugin 'altercation/vim-colors-solarized'
 
-Plugin 'frankier/neovim-colors-solarized-truecolor-only'
+" Plugin 'frankier/neovim-colors-solarized-truecolor-only'
 
-Plugin 'nanotech/jellybeans.vim'
+" Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'blueshirts/darcula'
 
 Plugin 'floobits/floobits-neovim'
 
-Plugin 'ensime/ensime-vim'
+" Plugin 'ensime/ensime-vim'
 
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -404,24 +404,10 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" " terminal emulator navigation
-" This configuration allows using `Alt+{h,j,k,l}` to navigate between windows no
-" matter if they are displaying a normal buffer or a terminal buffer in terminal
-" mode.
-:tnoremap <A-h> <C-\><C-n><C-w>h
-:tnoremap <A-j> <C-\><C-n><C-w>j
-:tnoremap <A-k> <C-\><C-n><C-w>k
-:tnoremap <A-l> <C-\><C-n><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
 
 let g:python3_host_prog = '/usr/bin/python3'
 
-" enabling pencil for markdown
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init({'wrap': 'hard'})
-augroup END
