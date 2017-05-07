@@ -24,13 +24,7 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'scrooloose/nerdtree'
 
-<<<<<<< HEAD
 Plugin 'mklabs/split-term.vim'
-=======
-" Plugin 'JamshedVesuna/vim-markdown-preview'
->>>>>>> de51fec6bcbb691a93dcd65143b14dabef204d21
-
-" Plugin 'scrooloose/syntastic'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
