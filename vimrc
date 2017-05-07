@@ -24,7 +24,11 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'scrooloose/nerdtree'
 
+<<<<<<< HEAD
 Plugin 'mklabs/split-term.vim'
+=======
+" Plugin 'JamshedVesuna/vim-markdown-preview'
+>>>>>>> de51fec6bcbb691a93dcd65143b14dabef204d21
 
 " Plugin 'scrooloose/syntastic'
 
@@ -409,5 +413,11 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-let g:python3_host_prog = '/usr/bin/python3'
+" markdown preview
+" let vim_markdown_preview_browser='Firefox'
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
+
+
+let g:python3_host_prog = '/usr/local/bin/python3'
 
