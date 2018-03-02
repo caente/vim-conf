@@ -9,24 +9,16 @@ let g:EclimCompletionMethod = 'omnifunc'
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set mouse=a
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'rust-lang/rust.vim'
-
-" Plugin 'racer-rust/vim-racer'
-
-" Plugin 'idris-hackers/idris-vim'
-
-Plugin 'vimwiki/vimwiki'
-
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'mklabs/split-term.vim'
-
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'cloudhead/neovim-fuzzy'
 
 Plugin 'rking/ag.vim'
 
@@ -38,22 +30,9 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-
 Plugin 'derekwyatt/vim-scala'
 
-" Plugin 'altercation/vim-colors-solarized'
-
-" Plugin 'frankier/neovim-colors-solarized-truecolor-only'
-
-" Plugin 'nanotech/jellybeans.vim'
-
 Plugin 'blueshirts/darcula'
-
-Plugin 'floobits/floobits-neovim'
-
-" Plugin 'ensime/ensime-vim'
-
-" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'Shougo/deoplete.nvim'
 
@@ -96,7 +75,7 @@ autocmd BufWinLeave * call clearmatches()
 " Colors
 syntax on
 syntax enable
-set background=light
+set background=dark
 let g:solarized_termcolors = 256
 " colorscheme solarized
 "colorscheme base16-atelierlakeside
@@ -173,8 +152,7 @@ map ,st :%!java -jar /Users/caente/.vim/scalariform.jar -f -q +spaceInsideParent
 " Tagbar (http://blog.stwrt.ca/2012/10/31/vim-ctags)
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
-" nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <silent> <Leader>ct :CtrlPTag<CR>
+nnoremap <C-p> :FuzzyOpen<CR>
 
 " NerdTree
 map <leader>n :NERDTreeToggle<cr>
@@ -278,22 +256,6 @@ map <C-b> :call Uncomment()<CR>
 " colorcolumn / print margin
 :set colorcolumn=120
 
-" http://robots.thoughtbot.com/faster-grepping-in-vim/
-" The Silver Searcher
-" 'ra'
-let g:ctrlp_working_path_mode = ''
-
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
 " bind K to grep word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -413,5 +375,5 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
 
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
